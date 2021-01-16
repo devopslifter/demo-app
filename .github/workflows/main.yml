@@ -4,12 +4,12 @@ on:
     branches:
       - main
     paths:
-    - 'dotnet-hello-world/**'
+    - '/**'
   pull_request:
     branches:
-      - dev-*
+      - main
     paths:
-    - 'dotnet-hello-world/**'
+    - '/**'
 jobs:
   build_push_deploy:
     runs-on: ubuntu-latest
