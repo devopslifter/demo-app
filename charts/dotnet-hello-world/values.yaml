@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: devopslifter/dotnet-core-hello-world
-  tag: dev-43e703c4524323ad182cc4396a8bb7566e254626
+  repository: devopslifter/demo-app
+  tag: dev-69958b1993ced8e490ab8a448f62d1444758535d
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
