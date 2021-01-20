@@ -19,14 +19,14 @@ jobs:
         
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
 
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Build an image from Dockerfile
         run: |
-          docker build -t docker.io/devopslifter/hello-appvia-demo:$${{ steps.get_version.outputs.VERSION }} .
+          docker build -t docker.io/devopslifter/hello-appvia-demo:${{ steps.get_version.outputs.VERSION }} .
         working-directory: dotnet-hello-world
         
       - name: Login to Docker Hub
@@ -37,5 +37,5 @@ jobs:
         
       - name: Push an image to Docker Hub
         run: |
-          docker push docker.io/devopslifter/hello-appvia-demo:$${{ steps.get_version.outputs.VERSION }}
+          docker push docker.io/devopslifter/hello-appvia-demo:${{ steps.get_version.outputs.VERSION }}
         working-directory: dotnet-hello-world
