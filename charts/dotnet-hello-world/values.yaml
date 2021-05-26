@@ -40,13 +40,13 @@ ingress:
     kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: le-prod
   hosts:
-    - host: eks-development.demo.teams.demo.kore.appvia.io
+    - host: demo.eks-development.demo.teams.demo.kore.appvia.io
       paths:
         - /
   tls:
     - secretName: dotnet-hello-world-tls
       hosts:
-        - eks-development.demo.teams.demo.kore.appvia.io
+        - demo.eks-development.demo.teams.demo.kore.appvia.io
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
